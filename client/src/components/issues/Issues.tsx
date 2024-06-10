@@ -1,7 +1,9 @@
+import IssuesTable from "./IssuesTable";
+
 function Issues() {
   return (
     <>
-      <h1>hello Issues</h1>
+      <IssuesTable />
     </>
   );
 }
