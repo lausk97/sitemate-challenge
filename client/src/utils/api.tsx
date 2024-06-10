@@ -22,7 +22,7 @@ export const createIssue = async (newIssue: Issue) => {
 };
 
 export const updateIssue = async (updateIssue: Issue) => {
-  const resp = await axios.post(
+  const resp = await axios.patch(
     `${baseURL}/issues/${updateIssue._id}`,
     updateIssue,
     {
@@ -33,6 +33,6 @@ export const updateIssue = async (updateIssue: Issue) => {
 };
 
 export const deleteIssue = async (deleteIssueId: string) => {
-  const resp = await axios.post(`${baseURL}/issues/${deleteIssueId}`);
+  const resp = await axios.delete(`${baseURL}/issues/${deleteIssueId}`);
   return resp.data;
 };

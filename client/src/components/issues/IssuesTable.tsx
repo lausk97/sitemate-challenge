@@ -1,7 +1,7 @@
-import { Issue } from "../../utils/api";
 import IssueItem from "./IssueItem";
+import { Issue } from "../../utils/api";
 
-function IssuesTable({ issues }: { issues: Issue[] }) {
+function IssuesTable({ issues, refreshIssues }: { issues: Issue[] }) {
   return (
     <>
       <table className="w-full">
@@ -11,11 +11,16 @@ function IssuesTable({ issues }: { issues: Issue[] }) {
             <th>Title</th>
             <th>Description</th>
             <th>Created At</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           {issues.map((issue) => (
-            <IssueItem key={issue._id} issue={issue} />
+            <IssueItem
+              key={issue._id}
+              issue={issue}
+              refreshIssues={refreshIssues}
+            />
           ))}
         </tbody>
       </table>
