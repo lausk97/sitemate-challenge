@@ -2,6 +2,36 @@
 
 This project is powered by MERN (MongoDB, Express, React, Node) with Vite on the client side, Typescript and TailwindCSS. Pnpm is used for package management instead of npm as it makes the development much faster with the way it handles the package internally.
 
+## Pre-requisite
+
+As it is currently running on mongoDB local server (mongodb://127.0.0.1/test), you will need to have mongodb services running:
+
+### How to install mongodb and run/stop mongodb
+
+Install mongoDB
+
+```
+brew install mongodb-community
+```
+
+Start server
+
+```
+brew services start mongodb-community
+```
+
+Only if you are done with the development, command to stop the mongo service
+
+```
+brew services stop mongodb-community
+```
+
+Check if the service is running
+
+```
+brew services list  # check mongodb-community server status to see if it is running
+```
+
 ## Installation
 
 To get the pnpm running
