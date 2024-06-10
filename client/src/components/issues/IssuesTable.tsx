@@ -1,7 +1,9 @@
-function IssuesTable() {
+import { Issue } from "../../utils/api";
+import IssueItem from "./IssueItem";
+
+function IssuesTable({ issues }: { issues: Issue[] }) {
   return (
     <>
-      <h1 className="mb-4">Issues</h1>
       <table className="w-full">
         <thead>
           <tr>
@@ -12,12 +14,9 @@ function IssuesTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>First issue</td>
-            <td>First issue description</td>
-            <td>time now</td>
-          </tr>
+          {issues.map((issue) => (
+            <IssueItem key={issue._id} issue={issue} />
+          ))}
         </tbody>
       </table>
     </>
