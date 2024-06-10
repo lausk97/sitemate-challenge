@@ -11,9 +11,7 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+app.use("/issues", require("./api/issue"));
 
 mongoose.connect("mongodb://127.0.0.1/test");
 mongoose.connection.once("open", () => {
